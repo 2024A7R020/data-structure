@@ -1,0 +1,17 @@
+/**
+* Note: The Returned Array Must Be Malloced, assume caller calls free().
+*/
+int* finalprices(int* prices, int pricesize, int* returnsize){
+int i,j;
+for(int i=0; i<pricesize-1; i++){
+for(j=i+1; j<pricesize; j++){
+if(prices[j]<=prices[i]){
+prices[i] = prices[i]-prices[j];
+    break;
+     }
+ } 
+
+}
+*returnsize = pricesize;
+return prices;
+}
